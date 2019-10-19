@@ -23,7 +23,7 @@ class HomePage extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            data: {},
+            data: "",
             studentName: "",
             loading: false,
             show: false,
@@ -78,25 +78,29 @@ class HomePage extends Component {
                 return el[1].name.includes(this.props.searchState.studentName)
             })
             let id = this.state.id;
-            return (
-                <div className="MainPage">
-                    <div className="HomePage" >
-                        <h1>All Sudents Details</h1>
-                        <h3>Enter Students Name</h3>
-                        <input className="input" name="studentName" value={this.state.studentName} onChange={evt => this.onChangeHandler(evt)} />
+            if (this.state.data) {
+                return (
+                    <div className="MainPage">
+                        <div className="HomePage" >
+                            <h1>All Sudents Details</h1>
+                            <h3>Enter Students Name</h3>
+                            <input className="input" name="studentName" value={this.state.studentName} onChange={evt => this.onChangeHandler(evt)} />
 
-                        <BrowserRouter>
-                            <div className="App">
-                                <Link to="/HomePage"></Link>
-                                <Route exact path='/HomePage' component={() => <AllCards data={nameArray} />}></Route>
-                                <Route path='/HomePage/:id' component={() => <AnyOtherCard data={nameArray} id={this.props.searchState.id} />}></Route >
+                            <BrowserRouter>
+                                <div className="App">
+                                    <Link to="/HomePage"></Link>
+                                    <Route exact path='/HomePage' component={() => <AllCards data={nameArray} />}></Route>
+                                    <Route path='/HomePage/:id' component={() => <AnyOtherCard data={nameArray} id={this.props.searchState.id} />}></Route >
 
-                            </div>
-                        </BrowserRouter>
-                        <button className="button" onClick={this.logoutHandler}>Logout</button>
-                    </div>
-                </div >
-            )
+                                </div>
+                            </BrowserRouter>
+                            <button className="button" onClick={this.logoutHandler}>Logout</button>
+                        </div>
+                    </div >
+                )
+            } else {
+                return <ClipLoader />
+            }
         } else {
             return <Redirect to='/' />;
         }
