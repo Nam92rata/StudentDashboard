@@ -10,11 +10,15 @@ class StudentCard extends Component {
         this.props.onClickCard(id);
     }
     render() {
+        let total = Object.entries(this.props.marks).reduce((acc, cur) => {
+            console.log(cur[1])
+            return acc = parseInt(acc) + cur[1]
+        }, 0)
         return (
             <div className="card1" onClick={evt => this.onClickHandler(evt, this.props.id)}>
-                <h3>Student Card</h3>
-                <h3>{this.props.id}</h3>
                 <h3>{this.props.name}</h3>
+                <h4>ID:{this.props.id}</h4>
+                <h4>Marks:{total}</h4>
             </div >
         )
 

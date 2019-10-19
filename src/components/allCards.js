@@ -12,8 +12,8 @@ class AllCards extends Component {
     }
 
     toggleAlphabet = () => {
-
-        let reversedArray = this.state.displayData.reverse();
+        console.log(this.state.displayData)
+        let reversedArray = this.props.data.reverse();
 
         this.setState({ displayData: reversedArray });
     }
@@ -30,7 +30,7 @@ class AllCards extends Component {
                 <div class="grid-container">
                     {this.state.displayData.map(el => {
                         return (
-                            <div class="grid-item"><StudentCard id={el[0]} name={el[1].name} /></div>
+                            <div class="grid-item"><StudentCard id={el[0]} name={el[1].name} marks={el[1].marks} /></div>
                         )
                     })}
                 </div>

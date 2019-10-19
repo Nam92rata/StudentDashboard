@@ -7,16 +7,7 @@
 }
 .grid-container {
   display: grid;
-  grid-template-columns: auto auto auto;
-  background-color: #2196F3;
   padding: 10px;
-}
-@media only screen and (max-width: 768px) {
-  .grid-item {
-    
-    grid-template-columns: auto 100px 1fr 2fr;
-    
-  }
 }
 .input{
   width: 70%;
@@ -25,10 +16,9 @@
 }
 .grid-item {
   background-color: rgba(255, 255, 255, 0.8);
-  border: 1px solid rgba(0, 0, 0, 0.8);
-  padding: 1em;
-  font-size: 30px;
-  text-align: center;
+    padding: 1em;
+    font-size: 30px;
+    text-align: center;
 }
 .tab{
   flex: 1 1;
@@ -42,14 +32,11 @@
   flex-wrap: wrap;
  
 }
-.card1{
-  
-  width: 400px;
+.card1{  
   margin: auto;
-  border: 1px solid black;
-  display: flex;
-  flex-direction: column;
-  opacity: 0.9;
+    border: 1px solid black;
+    background-color: cadetblue;
+    border-radius: 20px;
 }
 .card2{
   background-color: white;
@@ -162,3 +149,22 @@ input{
   border: none;
   border-radius: 10px;
 }
+
+@media (max-width: 480px) { 
+  .grid-container {
+    grid-template-columns: auto ;    
+  } 
+} 
+/* Media Query for Tablets Ipads portrait mode */ 
+@media (min-width: 481px) and (max-width: 1024px){ 
+  .grid-container {
+    grid-template-columns: auto auto ;    
+  }
+} 
+
+/* Media Query for Laptops and Desktops */ 
+@media (min-width: 1025px){ 
+  .grid-container {
+    grid-template-columns: auto auto auto ;    
+  }
+} 
