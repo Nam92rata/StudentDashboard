@@ -1,4 +1,4 @@
-import { createStore, Middleware, applyMiddleware } from "redux";
+import { createStore, applyMiddleware } from "redux";
 import createSagaMiddleware from "redux-saga";
 import reducer from './reducer';
 // import studentWatcherSaga from './studentWatcherSaga';

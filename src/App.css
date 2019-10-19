@@ -32,11 +32,21 @@
   flex-wrap: wrap;
  
 }
+.link {
+  color: inherit;
+  text-decoration: inherit;
+}
+.card2{
+  margin: auto;
+  display: inline-block;
+}
 .card1{  
   margin: auto;
     border: 1px solid black;
     background-color: cadetblue;
     border-radius: 20px;
+    text-decoration: none;
+    color: black;
 }
 .card2{
   background-color: white;

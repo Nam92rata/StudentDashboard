@@ -24,8 +24,10 @@ class Login extends Component {
     }
 
     onClickHandler = (e) => {
-        localStorage.setItem("login", this.state.username);
-        this.setState({ login: true })
+        if (this.state.username && this.state.password) {
+            localStorage.setItem("login", this.state.username);
+            this.setState({ login: true })
+        }
     }
 
     render() {
