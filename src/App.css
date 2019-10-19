@@ -1,22 +1,164 @@
 .App {
   text-align: center;
+  justify-content: center;
 }
-
-.App-logo {
-  height: 40vmin;
+.AppBar{
+    display: flex;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  background-color: #2196F3;
+  padding: 10px;
+}
+@media only screen and (max-width: 768px) {
+  .grid-item {
+    
+    grid-template-columns: auto 100px 1fr 2fr;
+    
+  }
+}
+.input{
+  width: 70%;
+  height: 4vh;
+  border-radius: 20px;
+}
+.grid-item {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 1em;
+  font-size: 30px;
+  text-align: center;
+}
+.tab{
+  flex: 1 1;
+    height: 50px;
+    padding: 10px;
+}
+.card{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+ 
+}
+.card1{
+  
+  width: 400px;
+  margin: auto;
+  border: 1px solid black;
   display: flex;
   flex-direction: column;
+  opacity: 0.9;
+}
+.card2{
+  background-color: white;
+  color: black;
+  height: 30em;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  opacity: 0.9;
+  padding: 10px;
+  margin: auto;
+  justify-content: center;
+  margin-top: 20px;
+}
+.hiddenCard{
+ visibility:hidden;
+ height:400px;
+}
+.forecast{ 
+  overflow: auto;
+}
+.weather{
+  height: 100%;
+}
+.row{
+  display: flex;
+  height: 4em;
+  justify-content: center;
+  align-items: center;
+  flex:1;
+  flex-wrap: wrap;
+}
+.col{
+  display: flex;
+  flex:1;
+  justify-content: center;
+}
+.block{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.block2{
+  height: 20px; 
+  padding: 10px;
+  /* flex: 1; */
+  justify-content: center;
+  align-items: center;
+}
+.col-bkg{
+  background-color: crimson;
+  height: 100%;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  display: flex;
+  flex-direction: column;
 }
 
-.App-link {
-  color: #09d3ac;
+.col-bkg-oblique{
+  background-color: #990a25;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+.row-bkg:nth-child(even){
+  background-color: slategray;
+}
+.row-bkg:nth-child(odd){
+  background-color: #0b2034;
+}
+
+.AboutUs{
+  z-index: 1;
+  position: fixed;
+  box-shadow: 10px 10px 8px 10px #888888;
+  width: 250px;
+  right: 0;
+  top: 0;
+  bottom: 10px;
+  opacity: 1;
+  overflow: auto;
+  background-color: aliceblue;
+}
+.aboutUs{
+  background-color: #990a25;
+  height:100%;
+}
+.Select{
+  width: 30%;
+  height: 4vh;
+  border-radius: 10px;
+  box-shadow: 2px 2px;
+}
+input{
+  width: 70%;
+  height: 3vh;
+}
+.heading{
+  height:6vh;
+}
+.button{
+  background-color: lightslategrey;
+  height: 5vh;
+  font-weight: bold;
+  padding: 10px;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 10px;
 }
