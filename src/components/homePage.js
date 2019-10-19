@@ -77,6 +77,7 @@ class HomePage extends Component {
             const nameArray = Object.entries(this.state.data).filter(el => {
                 return el[1].name.includes(this.props.searchState.studentName)
             })
+            let id = this.state.id;
             return (
                 <div className="MainPage">
                     <div className="HomePage" >
@@ -86,10 +87,10 @@ class HomePage extends Component {
 
                         <BrowserRouter>
                             <div className="App">
-                                <Switch>
-                                    <Route exact path='/HomePage' component={() => <AllCards data={nameArray} />}></Route>
-                                    {/* <Route exact path={this.props.searchState.id} component={AnyOtherCard}></Route > */}
-                                </Switch>
+                                <Link to="/HomePage"></Link>
+                                <Route exact path='/HomePage' component={() => <AllCards data={nameArray} />}></Route>
+                                <Route path='/HomePage/:id' component={() => <AnyOtherCard data={nameArray} id={this.props.searchState.id} />}></Route >
+
                             </div>
                         </BrowserRouter>
                         <button className="button" onClick={this.logoutHandler}>Logout</button>
